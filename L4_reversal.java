@@ -47,3 +47,13 @@ public class L4_reversal {
 
     }
 }
+
+/*
+ * The reversal of Harry Potter is rettoP yrraH
+ * The reversal of racecar is racecar
+ * 
+ * ===============================
+ * 
+ * [1, 2, 3, 4, 5]
+ * the reverse is : [5, 4, 3, 2, 1]
+ */
