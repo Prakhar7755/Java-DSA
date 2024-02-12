@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class L7_NextGreatestElement {
+public class L7_NextGreaterElement {
     static void findNextGreater(int arr[]) {
         Stack<Integer> stack = new Stack<>();
 
