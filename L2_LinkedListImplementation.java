@@ -1,4 +1,3 @@
-
 class Stack {
     private class Node {
         int data; // Data of the node

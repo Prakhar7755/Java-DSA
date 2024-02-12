@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class L5_BalancedParenthesis {
+public class L5_InfixPostfix {
     public static String convertToPostfix(String infixExpression) {
         StringBuilder postfixExpression = new StringBuilder();
         Stack<Character> st = new Stack<>();
