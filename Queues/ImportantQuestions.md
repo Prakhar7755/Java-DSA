@@ -1,0 +1,28 @@
+Here are some common Java DSA (Data Structures and Algorithms) questions related to queues that can be asked in job interviews:
+
+- ### Implement a queue using an array in Java.
+- ### Implement a queue using a linked list in Java.
+- ### Write a Java program to reverse the elements of a queue.
+- ### Write a Java program to check if a queue is empty or not.
+- ### Write a Java program to find the size of a queue.
+- ### Write a Java program to find the front element of a queue without removing it.
+- ### Write a Java program to find the rear element of a queue without removing it.
+- ### Write a Java program to find the maximum element in a queue.
+- ### Write a Java program to implement a circular queue.
+- ### Write a Java program to implement a priority queue using a heap.
+- ### Write a Java program to implement a double-ended queue (deque).
+- ### Write a Java program to implement a queue using two stacks.
+- ### Write a Java program to implement a queue using two queues.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and find minimum operations.
+- ### Write a Java program to check if a given sequence of operations is valid on a queue (e.g., enqueue, dequeue, peek, etc.).
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and find maximum operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and find median operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get minimum element operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get maximum element operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get minimum element in a sliding window operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get maximum element in a sliding window operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get minimum element in a circular subarray operations.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get maximum element in a circular subarray operations.
+- ### Write a Java program to find the number of elements in a circular queue.
+- ### Write a Java program to implement a queue that supports constant time enqueue, dequeue, and get minimum element with limited range operations.
+- ### These questions cover more advanced topics related to queues, such as supporting constant time operations, sliding windows, circular subarrays, and limited range operations. They require a deeper understanding of queue operations and often involve optimizing time or space complexity. Being familiar with these concepts and their implementation in Java will demonstrate your proficiency in data structures and algorithms during a job interview.
