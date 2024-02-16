@@ -16,8 +16,6 @@ Here are some important Data Structure and Algorithm questions related to HashMa
 14. Minimum insertions to form a palindrome with permutations allowed²
 15. Find the only repetitive element between 1 to n-1²
 16. Remove duplicates from an array²
-    Sure, here are some more important Data Structure and Algorithm questions related to HashMap:
-
 17. What is the internal working of a HashMap?⁶
 18. Can you store multiple keys with the same value in a hashmap?⁶
 19. Specify different methods of creating a hashmap in java along with implementation⁶
