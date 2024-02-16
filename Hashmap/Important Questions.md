@@ -1,7 +1,5 @@
 Here are some important Data Structure and Algorithm questions related to HashMap:
 
-<!-- put and get -->
-
 1. What is a Hash Table?¹
 2. Define what is a Hash Function?¹
 3. Find whether an array is a subset of another array²
@@ -35,7 +33,6 @@ Here are some important Data Structure and Algorithm questions related to HashMa
 29. How to perform operations like insertion, deletion, updation, etc. in hashmaps⁷
 30. What is the difference between a HashMap and a Hashtable⁶
 
-Source: Conversation with Bing, 16/2/2024
 (1) Top HashMap Interview Questions and Answers (2024) - InterviewBit. https://www.interviewbit.com/hashmap-interview-questions/.
 (2) HashMap Interview Questions and Answers in Java - DEV Community. https://dev.to/soniajm/hashmap-interview-questions-and-answers-in-java-1379.
 (3) HashMap in Java - GeeksforGeeks. https://www.geeksforgeeks.org/java-util-hashmap-in-java-with-examples/.
