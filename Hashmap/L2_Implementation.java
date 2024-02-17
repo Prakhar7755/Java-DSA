@@ -34,7 +34,7 @@ public class L2_Implementation {
             }
         }
 
-        public void put(K key, V value) {
+        private void put(K key, V value) {
             int bucketIdx = hashFunction(key);
             int dataIdx = searchInLL(key, bucketIdx); // search if the node exists or not
 
@@ -49,18 +49,39 @@ public class L2_Implementation {
 
             double lambda = (double) n / N;
             if (lambda > 2.0) {
-                // re-hashing
+                rehash();
             }
 
         }
 
-        // private int searchInLL(K key, int bucketIdx) {
-        //     //  38:00
-        // }
+        @SuppressWarnings("unused")
+
+        public void rehash() {
+
+            LinkedList<Node> oldBucket[] = buckets;
+            buckets = new LinkedList[N * 2];
+            for (int i = 0; i < N * 2; i++) {
+                buckets[i] = new LinkedList<>();
+            }
+
+            for (int i = 0; i < oldBucket.length; i++) {
+                LinkedList<Node> ll = oldBucket[i];
+                for (int j = 0; j < ll.size(); j++) {
+                    Node node = ll.get(j);
+                    put(node.key, node.value);
+                }
+            }
+        }
 
         private int searchInLL(K key, int bucketIdx) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'searchInLL'");
+            LinkedList<Node> ll = buckets[bucketIdx]; // TAKING OUT THE LL ON THE SPECIFIC BUCKET
+            for (int i = 0; i < ll.size(); i++) {
+                if (ll.get(i).key == key) {
+                    return i;
+                }
+            }
+            return -1;
+
         }
 
         private int hashFunction(K key) { // 0 to N-1
@@ -71,9 +92,84 @@ public class L2_Implementation {
             // absolute val and %N to limit it
         }
 
+        private V get(K key) {
+            int bucketIdx = hashFunction(key);
+            int dataIdx = searchInLL(key, bucketIdx); // search if the node exists or not
+
+            if (dataIdx == -1) { // key doesn't exist
+                return null;
+            }
+
+            else { // key exist
+                Node data = buckets[bucketIdx].get(dataIdx);
+                return data.value;
+            }
+        }
+
+        @SuppressWarnings("unused")
+
+        private boolean containsKey(K key) {
+            int bucketIdx = hashFunction(key);
+            int dataIdx = searchInLL(key, bucketIdx); // search if the node exists or not
+
+            if (dataIdx == -1) { // key doesn't exist
+                return false;
+            }
+
+            else { // key exist
+                return true;
+            }
+        }
+
+        @SuppressWarnings("unused")
+        private V remove(K key) {
+            int bucketIdx = hashFunction(key);
+            int dataIdx = searchInLL(key, bucketIdx); // search if the node exists or not
+
+            if (dataIdx == -1) { // key doesn't exist
+                return null;
+            }
+
+            else { // key exist
+                Node data = buckets[bucketIdx].remove(dataIdx);
+                n--;
+                return data.value;
+            }
+        }
+
+        public ArrayList<K> keySet() {
+            ArrayList<K> keys = new ArrayList<>();
+            for (int i = 0; i < buckets.length; i++) {
+                LinkedList<Node> ll = buckets[i];
+                for (int j = 0; j < ll.size(); j++) {
+                    Node node = ll.get(j);
+                    keys.add(node.key);
+                }
+            }
+            return keys;
+        }
+
+        public boolean isEmpty() {
+            return n == 0;
+        }
+
     }
 
     public static void main(String[] args) {
 
+        HashMap<String, Integer> map = new HashMap<>();
+
+        map.put("India", 200);
+        map.put("China", 190);
+        map.put("USA", 50);
+
+        System.out.printf("%d\n", map.get("India"));
+        System.out.printf("%b\n", map.get("India"));
+
+        ArrayList<String> keys = map.keySet();
+
+        for (int i = 0; i < keys.size(); i++) {
+            System.out.println(keys.get(i) + "\t" + map.get(keys.get(i)));
+        }
     }
 }
