@@ -54,8 +54,7 @@ public class L2_Implementation {
 
         }
 
-        @SuppressWarnings("unused")
-
+        @SuppressWarnings({ "unchecked" })
         public void rehash() {
 
             LinkedList<Node> oldBucket[] = buckets;
@@ -103,21 +102,6 @@ public class L2_Implementation {
             else { // key exist
                 Node data = buckets[bucketIdx].get(dataIdx);
                 return data.value;
-            }
-        }
-
-        @SuppressWarnings("unused")
-
-        private boolean containsKey(K key) {
-            int bucketIdx = hashFunction(key);
-            int dataIdx = searchInLL(key, bucketIdx); // search if the node exists or not
-
-            if (dataIdx == -1) { // key doesn't exist
-                return false;
-            }
-
-            else { // key exist
-                return true;
             }
         }
 
