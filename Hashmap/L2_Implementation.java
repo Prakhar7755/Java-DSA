@@ -22,14 +22,14 @@ public class L2_Implementation {
 
         private int n; // no. of nodes
         private int N; // no. of buckets
-        private LinkedList<Node> buckets[]; // buckets array of linkedlist datatype
+        private LinkedList<Node>[] buckets; // buckets array of linkedlist datatype
         // N = buckets.length;
 
         @SuppressWarnings("unchecked")
         public HashMap() {// CONSTRUCTOR
             this.N = 4;
             this.buckets = new LinkedList[4]; // empty linkedlist at all idx
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < buckets.length; i++) {
                 this.buckets[i] = new LinkedList<>(); // storing linkedlist at all the indexes
             }
         }

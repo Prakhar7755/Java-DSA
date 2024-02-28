@@ -3,7 +3,7 @@ Here are some important Data Structure and Algorithm questions related to HashMa
 1. What is a Hash Table?¹
 2. Define what is a Hash Function?¹
 3. Find whether an array is a subset of another array²
-4. Find the frequency of each character in a string²
+4. Find the frequency of each character in a string
 5. Find the first non-repeating character in a string²
 6. Find the intersection of two arrays²
 7. Find missing elements of a range²
@@ -20,13 +20,13 @@ Here are some important Data Structure and Algorithm questions related to HashMa
 18. Can you store multiple keys with the same value in a hashmap?⁶
 19. Specify different methods of creating a hashmap in java along with implementation⁶
 20. Specify whether hashmaps in Java are thread-safe or not⁶
-21. Does hashmap allow you to store null values?⁶
+21. Does hashmap allow you to store null values?
 22. Design and implement a class which contains two function find() as well as add()⁶
 23. Which method is used for removing or deleting all the key-value pairs?⁶
 24. Write a program to make a hashmap synchronized in java⁶
 25. What happens when we try to insert a key in a HashMap which is already present⁶
 26. What is the default load factor of a HashMap in Java?⁶
-27. A hashmap can store any number of null keys as well as null values⁶
+27. A hashmap can store any number of null keys as well as null values
 28. Explain the most important condition of the hashmap⁷
 29. How to perform operations like insertion, deletion, updation, etc. in hashmaps⁷
 30. What is the difference between a HashMap and a Hashtable⁶
