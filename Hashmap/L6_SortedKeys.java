@@ -3,7 +3,6 @@ import java.util.HashMap;
 
 public class L6_SortedKeys {
     static int[] sortedKeys(HashMap<Integer, String> map) {
-        
         Integer[] keysArray = map.keySet().toArray(new Integer[map.size()]);
 
         // int[] intArray = Arrays.stream(keysArray).mapToInt(Integer::intValue).toArray();
