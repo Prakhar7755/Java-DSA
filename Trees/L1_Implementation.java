@@ -4,8 +4,11 @@ public class L1_Implementation {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         Node root = createTree();
+
         preorder(root);
+
     }
 
     static void preorder(Node root) {
@@ -25,8 +28,8 @@ public class L1_Implementation {
             return null;
 
         root = new Node(data);
-        System.out.println("Enter left for: " + data);
 
+        System.out.println("Enter left for: " + data);
         root.left = createTree();
 
         System.out.println("Enter right for: " + data);
