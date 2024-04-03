@@ -38,12 +38,3 @@ public class L1_Implementation {
         return root;
     }
 }
-
-class Node {
-    Node left, right;
-    int data;
-
-    Node(int data) {
-        this.data = data;
-    }
-}

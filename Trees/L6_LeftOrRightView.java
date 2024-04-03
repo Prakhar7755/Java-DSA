@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class L6_LeftOrRightView {
@@ -7,35 +8,61 @@ public class L6_LeftOrRightView {
     public static void main(String[] args) {
         Node root = createTree();
 
-        printLeftView(root);
+        printLeftSideView(root);
+        System.out.println();
+
+        printRightSideView(root);
+        System.out.println();
 
     }
 
-    static void printLeftView(Node root) {
-        ArrayList<Node> list = new ArrayList<Node>();
-        list.add(null); // Initialize with a dummy node
+    static void printRightSideView(Node root) {
 
-        printLeftViewUtil(root, list, 0);
+        if (root == null)
+            return;
 
-        for (Node curr : list) {
-            if (curr != null) {
-                System.out.println(curr.data + "\t");
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            for (int i = 0; i < levelSize; i++) {
+                Node node = queue.poll();
+                if (i == levelSize - 1) {
+                    System.out.print(node.data + " "); // Print the rightmost node at each level
+                }
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
             }
         }
     }
 
-    static void printLeftViewUtil(Node root, ArrayList<Node> list, int level) {
+    static void printLeftSideView(Node root) {
         if (root == null)
             return;
 
-        if (list.size() <= level) {
-            list.add(root); // Add the node if the list size is insufficient
-        } else {
-            list.set(level, root); // Update the existing node at the current level
-        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
 
-        printLeftViewUtil(root.left, list, level + 1);
-        printLeftViewUtil(root.right, list, level + 1);
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            for (int i = 0; i < levelSize; i++) {
+                Node node = queue.poll();
+                if (i == 0) {
+                    System.out.print(node.data + " "); // Print the leftmost node at each level
+                }
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+        }
     }
 
     static Node createTree() {

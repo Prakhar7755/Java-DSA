@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class L8_TreeToLLConversion {
     private DoublyListNode head;
     private DoublyListNode prev;
+    static Scanner sc = new Scanner(System.in);
 
     public DoublyListNode convertToDoublyLinkedList(Node root) {
         if (root == null) {
@@ -15,7 +18,7 @@ public class L8_TreeToLLConversion {
             return;
         }
         inorderTraversal(node.left);
-        DoublyListNode curr = new DoublyListNode(node.val);
+        DoublyListNode curr = new DoublyListNode(node.data);
         if (head == null) {
             head = curr;
         } else {
@@ -27,15 +30,13 @@ public class L8_TreeToLLConversion {
     }
 
     public static void main(String[] args) {
-        // Example usage:
         Node root = createTree();
 
         L8_TreeToLLConversion converter = new L8_TreeToLLConversion();
         DoublyListNode result = converter.convertToDoublyLinkedList(root);
 
-        // Print the doubly linked list
         while (result != null) {
-            System.out.print(result.val + " ");
+            System.out.print(result.data + " ");
             result = result.next;
         }
     }
@@ -61,11 +62,11 @@ public class L8_TreeToLLConversion {
 }
 
 class DoublyListNode {
-    int val;
+    int data;
     DoublyListNode prev;
     DoublyListNode next;
 
-    DoublyListNode(int val) {
-        this.val = val;
+    DoublyListNode(int data) {
+        this.data = data;
     }
 }
