@@ -1,16 +1,17 @@
 import java.util.Scanner;
 
+//                   Diameter of a tree = Number of nodes in the largest path b/w two leaf nodes
+
 public class L9_diameterOfTree {
     static Scanner sc = new Scanner(System.in);
     static int ans = 0; // THIS WILL STORE THE DIAMETER OF THE second approach function
 
     public static void main(String[] args) {
 
-        // Diameter of a tree = Number of nodes in the largest path b/w two leaf nodes
-        // o(n^2)
         Node root = createTree();
 
         System.out.println("\nthe diameter1 of the binary tree according to function1 => " + diameter1(root));
+
         heightAndDiameter(root);
         System.out.println("\nthe diameter2 of the binary tree according to function2 => " + ans);
 
@@ -69,13 +70,13 @@ public class L9_diameterOfTree {
 
         return root;
     }
-}
 
-class Node {
-    Node left, right;
-    int data;
+    static class Node {
+        Node left, right;
+        int data;
 
-    Node(int data) {
-        this.data = data;
+        Node(int data) {
+            this.data = data;
+        }
     }
 }
