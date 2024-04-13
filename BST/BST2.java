@@ -1,19 +1,41 @@
-public class BST2 {
+class BST2 {
 
-    public Node root;
+    Node root;
+    int x = Integer.MIN_VALUE;
 
     public BST2() {
         this.root = null;
     }
-    
-    public void insert(int value) {
+
+    /*
+     * CHECKING IF A TREE IS BST OR NOT CAN BE DONE IN 3 WAYS
+     * 1) recursive thinking on Lt , Rt and root
+     * 2) Inoder traverse and add it to the arraylist (as inorder gives sorted array
+     * in BST)
+     * 3) let x = -INF, and if inorder is not greater than this then return false.
+     */
+
+    boolean isBinarySearchTree(Node root) {
+        if (root != null) {
+            isBinarySearchTree(root.left);
+            if (x>root.data) {
+                return false;
+            }
+            else{
+                x = root.data;
+            }
+            isBinarySearchTree(root.right);
+        }
+        return true;
+    }
+
+    void insert(int value) {
         if (root == null) {
             root = new Node(value);
         } else {
             insertRec(root, value);
         }
     }
-
 
     private void insertRec(Node current, int value) {
         if (value < current.data) {
@@ -31,7 +53,7 @@ public class BST2 {
         }
     }
 
-    public void inOrderTraversal(Node node) {
+    void inOrderTraversal(Node node) {
         if (node != null) {
             inOrderTraversal(node.left);
             System.out.print(node.data + " ");
@@ -50,8 +72,5 @@ public class BST2 {
         System.out.print("In-order traversal: ");
         bst.inOrderTraversal(bst.root);
 
-        System.out.printf("\nSearching for 10 in BST: " + search(bst.root, 10));
-
-        System.out.printf("\nSearching for 30 in BST: " + search(bst.root, 30));
     }
 }

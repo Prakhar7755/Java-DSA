@@ -6,11 +6,11 @@ public class BinarySearchTree {
         this.root = null;
     }
 
-    static Node deleteNode(Node node, int key) {
+    static Node deleteNode(Node root, int key) {
         if (root == null)  return root;
 
         if (key < root.data) 
-            root.left = deleteNode(root.left, key)
+            root.left = deleteNode(root.left, key);
         
             else if (key>root.data) 
             root.right = deleteNode(root.right, key);
@@ -21,7 +21,7 @@ public class BinarySearchTree {
             else if (root.right == null) 
                 return root.left;
             
-            root.data = minValue(root.data);
+            root.data = minValue(root);
             root.right = deleteNode(root.right, root.data);
         }
         return root;
@@ -73,11 +73,11 @@ public class BinarySearchTree {
         }
     }
 
-    public void inOrderTraversal(Node node) {
-        if (node != null) {
-            inOrderTraversal(node.left);
-            System.out.print(node.data + " ");
-            inOrderTraversal(node.right);
+    public void inOrderTraversal(Node root) {
+        if (root != null) {
+            inOrderTraversal(root.left);
+            System.out.print(root.data + " ");
+            inOrderTraversal(root.right);
         }
     }
 
