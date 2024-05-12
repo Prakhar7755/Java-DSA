@@ -1,8 +1,5 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
-public class Graph {
+import java.util.*;
+class Graph {
     private int[][] adjacencyMatrix;
     private int numVertices;
 
@@ -23,7 +20,7 @@ public class Graph {
         adjacencyMatrix[destination][source] = 0;
     }
 
-    public void dfs(int startVertex) {
+    void dfs(int startVertex) {
         boolean[] visited = new boolean[numVertices];
         Stack<Integer> stack = new Stack<>();
 
@@ -43,7 +40,7 @@ public class Graph {
         }
     }
 
-    public void bfs(int startVertex) {
+    void bfs(int startVertex) {
         boolean[] visited = new boolean[numVertices];
         Queue<Integer> queue = new LinkedList<>();
 
@@ -63,7 +60,7 @@ public class Graph {
         }
     }
 
-    public void printGraph() {
+    void printGraph() {
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
                 System.out.print(adjacencyMatrix[i][j] + "\t");

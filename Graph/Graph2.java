@@ -4,7 +4,7 @@ public class Graph2 {
     private int numVertices;
     private List<List<Integer>> adjacencyList;
 
-    Graph2(int numVertices) {
+    public Graph2(int numVertices) {
         this.numVertices = numVertices;
         this.adjacencyList = new ArrayList<>(numVertices);
 
@@ -25,7 +25,7 @@ public class Graph2 {
         adjacencyList.get(destination).remove(Integer.valueOf(source));
     }
 
-    public void dfs(int startVertex) {
+     void dfs(int startVertex) {
         boolean[] visited = new boolean[numVertices];
         Stack<Integer> stack = new Stack<>();
 
@@ -45,7 +45,7 @@ public class Graph2 {
         }
     }
 
-    public void bfs(int startVertex) {
+     void bfs(int startVertex) {
         boolean[] visited = new boolean[numVertices];
         Queue<Integer> queue = new LinkedList<>();
 
@@ -63,7 +63,21 @@ public class Graph2 {
                 }
             }
         }
-    }
+    } 
+    // boolean isCycle(int vertex) {
+    //     var visited = new boolean[vertex];
+
+    //     for (int i = 0; i < vertex; i++) {
+    //         if (!visited[i]) {
+    //             if (dfs(vertex);) {
+                    
+    //             }
+    //         }
+    //     }
+
+    //     return false;
+    // }
+
 
     void printGraph() {
         System.out.println("Graph:");
