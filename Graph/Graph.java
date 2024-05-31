@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.util.*;
 
-class Graph {
+public class Graph {
   static class Edge {
     int src, dest;
     int weight;
@@ -38,7 +38,48 @@ class Graph {
     }
   }
 
-  @SuppressWarnings("unchecked")
+  /* BREATH FIRST TRAVERSAL */
+  public static void bfs(ArrayList<Edge> graph[], int V) {
+    Queue<Integer> q = new LinkedList<>();
+    boolean vis[] = new boolean[V];
+    q.add(0);
+
+    while (!q.isEmpty()) {
+      int curr = q.remove();
+
+      if (vis[curr] == false) {
+        System.out.printf(curr + "\t");
+        vis[curr] = true;
+
+        for (int i = 0; i < graph[curr].size(); i++) {
+          Edge e = graph[curr].get(i);
+          q.add(e.dest);
+        }
+      }
+    }
+  }
+
+  /* DEPTH FIRST TRAVERSAL */
+  public static void dfs(ArrayList<Edge> graph[], int V) {
+    Stack<Integer> st = new Stack<>();
+    boolean vis[] = new boolean[V];
+    st.add(0);
+
+    while (!st.isEmpty()) {
+      int curr = st.pop();
+
+      if (vis[curr] == false) {
+        System.out.printf(curr + "\t");
+        vis[curr] = true;
+
+        for (int i = 0; i < graph[curr].size(); i++) {
+          Edge e = graph[curr].get(i);
+          st.push(e.dest);
+        }
+      }
+    }
+  }
+
   public static void main(String[] args) {
     int V = 4; // no. of vertices
 
@@ -53,6 +94,13 @@ class Graph {
       Edge e = graph[2].get(i);
       System.out.print(e.dest + "\t");
     }
+
+    System.out.println("\n\nBFS Traversal");
+    bfs(graph, V);
+
+
+    System.out.println("\n\nDFS Traversal");
+    dfs(graph, V);
 
   }
 }
