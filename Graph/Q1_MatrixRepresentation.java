@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("unused")
+@SuppressWarnings("unUsed")
 class Graph {
   private int[][] adjacencyMatrix;
   private int V;
@@ -26,8 +26,8 @@ class Graph {
     }
     adjacencyMatrix = newMatrix;
   }
-  /* Removing Vertices */
 
+  /* Removing Vertices */
   public void removeVertex(int vertex) {
     if (vertex > V) {
       System.out.println("Vertex doesn't exist");
@@ -54,7 +54,7 @@ class Graph {
   public void printAdjacencyMatrix() {
     for (int i = 0; i < V; i++) {
       for (int j = 0; j < V; j++) {
-        System.out.println(adjacencyMatrix[i][j] + "\t");
+        System.out.print(adjacencyMatrix[i][j] + "\t\t");
       }
       System.out.println();
     }
@@ -80,6 +80,11 @@ class Graph {
       }
     }
     return degree;
+  }
+
+  public static void addEdge(ArrayList<ArrayList<Integer>> adj, int i, int j) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'addEdge'");
   }
 }
 
