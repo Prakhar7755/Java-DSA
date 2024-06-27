@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Graph {
-   void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
+  void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
     adj.get(u).add(v);
     adj.get(v).add(u);
   }
 
-   void printGraph(ArrayList<ArrayList<Integer>> adj) {
+  void printGraph(ArrayList<ArrayList<Integer>> adj) {
     for (int i = 0; i < adj.size(); i++) {
       System.out.print("\nAdjacency List of vertex " + i);
       for (int j = 0; j < adj.get(i).size(); j++) {
@@ -16,7 +16,7 @@ public class Graph {
     }
   }
 
-   void BFS(ArrayList<ArrayList<Integer>> adj, int V, int s) {
+  void BFS(ArrayList<ArrayList<Integer>> adj, int V, int s) {
     // s = 0 ASSUME ZERO IS SOURCE
     boolean visited[] = new boolean[V + 1];
     Queue<Integer> q = new LinkedList<>();
@@ -35,7 +35,7 @@ public class Graph {
     }
   }
 
-   void BFSdis(ArrayList<ArrayList<Integer>> adj, int V) {
+  void BFSdis(ArrayList<ArrayList<Integer>> adj, int V) {
     boolean[] visited = new boolean[V + 1];
     for (int i = 0; i < V; i++) {
       if (!visited[i]) {
@@ -44,7 +44,7 @@ public class Graph {
     }
   }
 
-   void BFS2(ArrayList<ArrayList<Integer>> adj, int s, boolean[] visited) {
+  void BFS2(ArrayList<ArrayList<Integer>> adj, int s, boolean[] visited) {
     Queue<Integer> q = new LinkedList<>();
     visited[s] = true;
     q.add(s);
@@ -61,7 +61,7 @@ public class Graph {
     }
   }
 
-   void DFS(ArrayList<ArrayList<Integer>> adj, int V, int s) {
+  void DFS(ArrayList<ArrayList<Integer>> adj, int V, int s) {
     boolean[] visited = new boolean[V];
     var st = new Stack<Integer>();
     st.push(s);
@@ -78,6 +78,39 @@ public class Graph {
         }
       }
     }
+  }
+
+  boolean isCycle(ArrayList<ArrayList<Integer>> adj, int V) {
+    boolean vis[] = new boolean[V];
+    for (int i = 0; i < V; i++) {
+      
+    }
+  }
+
+  void shortestPath(ArrayList<ArrayList<Integer>> adj, int V, int s) {
+    int[] dist = new int[V];
+    for (int i = 0; i < dist.length; i++) {
+      dist[i] = Integer.MAX_VALUE;
+    }
+
+    dist[s] = 0;
+    Queue<Integer> q = new LinkedList<>();
+
+    boolean visited[] = new boolean[V];
+    q.offer(s);
+    visited[s] = true;
+
+    while (!q.isEmpty()) {
+      int u = q.poll();
+      for (int v : adj.get(u)) {
+        if (!visited[v]) {
+          dist[v] = dist[u] + 1;
+          visited[v] = true;
+          q.offer(v);
+        }
+      }
+    }
+    System.out.println(Arrays.toString(dist));
   }
 
 }
