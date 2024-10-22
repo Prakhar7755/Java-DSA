@@ -32,10 +32,10 @@ class Stack {
             System.out.println("Stack is empty");
             return -1;
         }
-        int popedElement = stackArray[top];
+        int poppedElement = stackArray[top];
         top--;
-        System.out.println("the popped element is " + popedElement);
-        return popedElement;
+        System.out.println("the popped element is " + poppedElement);
+        return poppedElement;
     }
 
     public int peek() {

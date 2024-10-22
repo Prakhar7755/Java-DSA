@@ -1,10 +1,12 @@
 Certainly! Let's dive into the **`static`** keyword in Java, explore its properties, and provide some code examples.
 
 1. **What is the `static` Keyword?**
+
    - In Java, the `static` keyword indicates that a particular member (variable or method) belongs to the **class itself**, rather than to an instance of that class.
    - When you declare something as `static`, there is only **one instance** of it shared across all objects of the class.
 
 2. **Where Can We Use `static`?**
+
    - We can apply the `static` keyword to:
      - **Variables**: Creating static variables (also known as class variables).
      - **Methods**: Defining static methods (also known as class methods).
@@ -12,9 +14,11 @@ Certainly! Let's dive into the **`static`** keyword in Java, explore its propert
      - **Nested Classes**: Creating static nested classes.
 
 3. **Static Variables (Class Variables)**:
+
    - A static variable is shared among all instances of the class.
    - It gets memory only once in the class area during class loading.
    - Example:
+
      ```java
      class Student {
          int rollno; // Instance variable
@@ -41,16 +45,20 @@ Certainly! Let's dive into the **`static`** keyword in Java, explore its propert
          }
      }
      ```
+
      Output:
+
      ```
      111 Karan ITS
      222 Aryan ITS
      ```
 
 4. **Static Blocks**:
+
    - Static blocks are executed when the class is loaded into memory.
    - They are used for static initialization.
    - Example:
+
      ```java
      class Main {
          static int a = 23; // Static variable
@@ -77,7 +85,9 @@ Certainly! Let's dive into the **`static`** keyword in Java, explore its propert
          }
      }
      ```
+
      Output:
+
      ```
      First Static block.
      Second Static block.
@@ -86,9 +96,11 @@ Certainly! Let's dive into the **`static`** keyword in Java, explore its propert
      ```
 
 5. **Static Methods (Class Methods)**:
+
    - Static methods belong to the class, not to any specific instance.
    - They can be called using the class name (e.g., `ClassName.methodName()`).
    - Example:
+
      ```java
      class MathUtils {
          static int add(int a, int b) {
@@ -103,7 +115,9 @@ Certainly! Let's dive into the **`static`** keyword in Java, explore its propert
          }
      }
      ```
+
      Output:
+
      ```
      Result: 30
      ```
